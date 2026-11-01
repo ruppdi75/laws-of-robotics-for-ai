@@ -1,6 +1,6 @@
 # Laws of Robotics for Artificial Intelligence
 
-![Laws of Robotics for AI — draft for public review](assets/hero.png)
+![Laws of Robotics for AI — Version 1.0](assets/hero.png)
 
 **Version:** 1.0 · **Position of Lumi-Systems.io** · published openly, including its limits
 **License:** CC BY-SA 4.0 (text) · MIT (code) — see [`LICENSE`](LICENSE)
@@ -125,7 +125,7 @@ Two independent reviews shaped this version. Their findings are not an apology, 
 **eight contradictions we have decided, four gaps we name openly** —
 for example: Law 2 requires refusing an unlawful instruction *and* exercising a human override of
 that refusal; "irreversible" is defined as "no return path" while Law 4 demands one. They are listed in
-[§5 of the laws](laws/00-the-laws.md#5-what-this-draft-does-not-achieve--open-contradictions) and in
+[§5 of the laws](laws/00-the-laws.md#5-open-points--named-not-hidden) and in
 [`REVIEW-FINDINGS.md`](REVIEW-FINDINGS.md).
 
 **We offer no certification and no conformity claim** — deliberately. A badge does not survive

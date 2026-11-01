@@ -245,16 +245,15 @@ definition written after the incident is a limit invoked too late.
 
 ### Law 8 — Misuse of the name *(enforced by the publisher)*
 
-**Statement.** "Laws of Robotics for AI" names a **draft proposal**. It may be cited as such, with
-its version and the URL of this repository. It may **not** be cited as a standard, a certification,
+**Statement.** "Laws of Robotics for AI" names a **published position, version 1.0**. It may be cited as such, with its version and the URL of this repository. It may **not** be cited as a standard, a certification,
 a conformity mark or a guarantee.
 
 **Failure prevented.** The sticker: a marketing claim with no evidence behind it.
 
 **Enforcement.** *Who:* the publisher of the name; practically, buyers and reviewers who ask for the
-evidence. *Artefact:* the citation itself — version, link, and the words "draft proposal".
+evidence. *Artefact:* the citation itself — version, link, and the words "version 1.0".
 *Red condition:* a citation without version and link; the words "certified", "compliant" or
-"standard" attached to the name; a claim of conformity to a document that has no certification path.
+"standard" attached to the name; a claim of conformity to a document that offers no certification.
 
 **Limit.** A text cannot police its own citation. Its protection is that no certificate exists to
 counterfeit — and that the open-contradiction list in §5 travels with the name.

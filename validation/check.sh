@@ -19,7 +19,7 @@ rc=$(zaehle 'Red condition:' laws/00-the-laws.md)
 [ "$rc" -ge 9 ] && ok "Red conditions: $rc" || rot "nur $rc Red conditions (erwartet >= 9)"
 
 echo "== 2. Vorrang, Verbotsuntergrenze, Zertifizierung =="
-for anker in 'Supremacy of law' 'Prohibition floor' 'Risk classification' 'Role clarity' 'What this draft does not achieve' 'No certification'; do
+for anker in 'Supremacy of law' 'Prohibition floor' 'Risk classification' 'Role clarity' 'Open points' 'No certification'; do
   grep -q "$anker" laws/00-the-laws.md && ok "$anker" || rot "$anker fehlt"
 done
 grep -qi 'may \*\*not\*\* be cited as a standard\|misusing them' laws/00-the-laws.md && ok "Mißbrauchsgrenze geregelt" || rot "Mißbrauchsgrenze fehlt"
