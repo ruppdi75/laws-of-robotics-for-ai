@@ -1,5 +1,7 @@
 # Laws of Robotics for Artificial Intelligence
 
+![Laws of Robotics for AI — draft for public review](assets/hero.png)
+
 **Version:** v0.3 (proposal) · **Status:** **DRAFT FOR PUBLIC REVIEW — not a standard, not a certification**
 **License:** CC BY-SA 4.0 (text) · MIT (code) — see [`LICENSE`](LICENSE)
 
