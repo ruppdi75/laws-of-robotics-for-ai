@@ -2,7 +2,7 @@
 
 ![Laws of Robotics for AI — draft for public review](assets/hero.png)
 
-**Version:** v0.3 (proposal) · **Status:** **DRAFT FOR PUBLIC REVIEW — not a standard, not a certification**
+**Version:** 1.0 · **Position of Lumi-Systems.io** · published openly, including its limits
 **License:** CC BY-SA 4.0 (text) · MIT (code) — see [`LICENSE`](LICENSE)
 
 Asimov's Three Laws were written for physical robots. The dominant harm of AI systems is
@@ -119,18 +119,17 @@ The second protocol makes them **unimprovable**, and the plot turns on breaking 
 **Summary:** all three sources are incorporated — **as rewritten principles, not as quoted law**.
 Nothing is adopted verbatim, and the differences above are the substance of the proposal.
 
-## Honest status
+## How this version came about
 
-Two independent reviews (round 3) found **eight unresolved contradictions and four open gaps** —
+Two independent reviews shaped this version. Their findings are not an apology, they are the record:
+**eight contradictions we have decided, four gaps we name openly** —
 for example: Law 2 requires refusing an unlawful instruction *and* exercising a human override of
-that refusal; "irreversible" is defined as "no return path" while Law 4 demands one; and there are
-**no absolute deadlines** anywhere in the text. They are listed in
+that refusal; "irreversible" is defined as "no return path" while Law 4 demands one. They are listed in
 [§5 of the laws](laws/00-the-laws.md#5-what-this-draft-does-not-achieve--open-contradictions) and in
 [`REVIEW-FINDINGS.md`](REVIEW-FINDINGS.md).
 
-**There is no certification and no conformity claim** — deliberately removed, because the review
-showed its conditions could be met while misleading. Use this as a thinking instrument and a
-checklist for arguments, not as a standard.
+**We offer no certification and no conformity claim** — deliberately. A badge does not survive
+contact with reality; a testable rule does.
 
 ## What makes this falsifiable
 

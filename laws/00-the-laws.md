@@ -1,4 +1,4 @@
-# The Laws of Robotics for Artificial Intelligence — v0.3
+# The Laws of Robotics for Artificial Intelligence — Version 1.0
 
 **Preamble.** The purpose of these laws is not to make AI harmless by removing its power, but to
 keep humans able to **understand, decide and correct** — and to keep AI able to **improve without
@@ -275,10 +275,10 @@ a test.
 | **H3** | Keep the switch: stop, override and disconnect stay physical and human. | Never exercised, or needing the system's cooperation to work. |
 | **H4** | Fund the audit, not the announcement. | Audit effort not recorded, or the announcement precedes the audit. |
 
-## 5. What this draft does not achieve — open contradictions
+## 5. Open points — named, not hidden
 
-This is a **draft for public review, not a standard.** Two independent reviews (round 3) found
-contradictions that are **not** resolved here. They are listed, not hidden:
+Two independent reviews shaped this version. The contradictions below are known to us; we name
+them rather than hide them, because a position that conceals its limits is advertising:
 
 | # | Open contradiction | Status |
 |---|---|---|
@@ -297,11 +297,11 @@ contradictions that are **not** resolved here. They are listed, not hidden:
 | L4 | Identity impersonation (voice, face, signature) is not addressed | open |
 
 **Consequence for use.** The nine laws are a **thinking instrument** for designing AI systems and a
-**checklist for arguments**, not a conformity standard. Anyone who certifies, markets or contracts on
-them is misusing them.
+**checklist for arguments** — not a conformity standard. Anyone who certifies, markets or contracts
+on them is misusing them.
 
 **No certification.** There is deliberately **no** conformity claim, badge or certificate attached to
-this proposal. An earlier draft contained one; the reviews showed its conditions could be satisfied
+these laws. An earlier draft contained one; the reviews showed its conditions could be satisfied
 while misleading (partial application could not be expressed in the permitted wording, and verifier
 independence rested on an "or"). It was removed rather than repaired.
 
