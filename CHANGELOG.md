@@ -2,6 +2,16 @@
 
 Append-only. A change to the laws themselves requires a release entry with a named acceptor.
 
+## v0.3-public — 2026-11-01 (first public draft)
+
+- **§5 certification removed entirely.** The reviews showed the conditions were satisfiable while
+  misleading (partial application could not be expressed; verifier independence rested on an "or";
+  Law 8's evidence was the certificate itself). Replaced by §5 "What this draft does not achieve":
+  eight open contradictions and four open gaps, named.
+- **Law 8 rewritten**: the name may only be cited as "draft proposal" with version and link.
+- README status changed to *draft for public review*; review findings added as a file.
+- Checker adapted: anchors for the removed certification replaced; misuse clause enforced.
+
 ## v0.3 — 2026-11-01 (unpublished draft, review round 3 pending)
 
 Response to the **second** independent review (enterprise / EU AI Act / GDPR), including seven

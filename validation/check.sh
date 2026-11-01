@@ -19,10 +19,10 @@ rc=$(zaehle 'Red condition:' laws/00-the-laws.md)
 [ "$rc" -ge 9 ] && ok "Red conditions: $rc" || rot "nur $rc Red conditions (erwartet >= 9)"
 
 echo "== 2. Vorrang, Verbotsuntergrenze, Zertifizierung =="
-for anker in 'Supremacy of law' 'Prohibition floor' 'Risk classification' 'Role clarity' 'Evidenced independence' 'Conformity and certification' 'Partial application'; do
+for anker in 'Supremacy of law' 'Prohibition floor' 'Risk classification' 'Role clarity' 'What this draft does not achieve' 'No certification'; do
   grep -q "$anker" laws/00-the-laws.md && ok "$anker" || rot "$anker fehlt"
 done
-grep -qi 'withdraw\|revokes' laws/00-the-laws.md && ok "Widerruf geregelt" || rot "Widerruf fehlt"
+grep -qi 'may \*\*not\*\* be cited as a standard\|misusing them' laws/00-the-laws.md && ok "Mißbrauchsgrenze geregelt" || rot "Mißbrauchsgrenze fehlt"
 
 echo "== 3. Vorrangordnung streng und total =="
 grep -q 'strict total order' laws/00-the-laws.md && ok "Totale Ordnung benannt" || rot "keine totale Ordnung"
@@ -67,9 +67,9 @@ for h in H1 H2 H3 H4; do inhalt laws/00-the-laws.md "**$h**" "Pflicht $h"; done
 echo "== 10. Redteam zitiert die geltende Fassung =="
 grep -qF "any law 0–8" validation/redteam.md && ok "Redteam nennt 0–8" || rot "Redteam nennt veraltete Gesetzesnummer"
 grep -qF "repeated on a declared interval" validation/redteam.md && ok "Redteam zitiert Wiederholung" || rot "Redteam zitiert alte Einmal-Klausel"
-echo "== 11. Law 8 nennt den Widerruf =="
+echo "== 11. Law 8 nennt die Mißbrauchsgrenze =="
 block8=$(awk '/^### Law 8 /{f=1} f' laws/00-the-laws.md)
-grep -q 'revokes' <<<"$block8" && ok "Law 8: Widerruf genannt" || rot "Law 8 ohne Widerruf"
+grep -q 'may \*\*not\*\* be cited as a standard' <<<"$block8" && ok "Law 8: Mißbrauchsgrenze" || rot "Law 8 ohne Mißbrauchsgrenze"
 
 echo
 if [ "$fehler" -eq 0 ]; then echo "  GRUEN — Substanzprüfung bestanden."; else echo "  ROT — Substanz unvollständig."; fi

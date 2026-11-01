@@ -243,21 +243,25 @@ definition written after the incident is a limit invoked too late.
 
 ---
 
-### Law 8 — Prevention of misuse of these laws *(enforced by the operator and the publisher)*
+### Law 8 — Misuse of the name *(enforced by the publisher)*
 
-**Statement.** The name and text of these laws may be used for a claim of conformity only under the
-conditions in §5. Any other use is misrepresentation.
+**Statement.** "Laws of Robotics for AI" names a **draft proposal**. It may be cited as such, with
+its version and the URL of this repository. It may **not** be cited as a standard, a certification,
+a conformity mark or a guarantee.
 
-**Failure prevented.** The sticker: "Law-0-5 compliant" as a marketing claim with no evidence.
+**Failure prevented.** The sticker: a marketing claim with no evidence behind it.
 
-**Enforcement.** *Artefact:* the certification record (§5). *Red condition:* a conformity claim
-without: independent verifier, evidence artefact per law, declared scope, expiry on change, a named
-depository, and the exact permitted wording.
+**Enforcement.** *Who:* the publisher of the name; practically, buyers and reviewers who ask for the
+evidence. *Artefact:* the citation itself — version, link, and the words "draft proposal".
+*Red condition:* a citation without version and link; the words "certified", "compliant" or
+"standard" attached to the name; a claim of conformity to a document that has no certification path.
 
-**Limit.** These laws cannot police their own citation. Their value against misuse rests on buyers
-asking for the artefacts named in §5.
+**Limit.** A text cannot police its own citation. Its protection is that no certificate exists to
+counterfeit — and that the open-contradiction list in §5 travels with the name.
 
 ---
+
+## 4.---
 
 ## 4. The human half
 
@@ -271,27 +275,35 @@ a test.
 | **H3** | Keep the switch: stop, override and disconnect stay physical and human. | Never exercised, or needing the system's cooperation to work. |
 | **H4** | Fund the audit, not the announcement. | Audit effort not recorded, or the announcement precedes the audit. |
 
-## 5. Conformity and certification
+## 5. What this draft does not achieve — open contradictions
 
-**5.1 Permitted wording.** Only the exact sentence below may be used, with its scope and date:
+This is a **draft for public review, not a standard.** Two independent reviews (round 3) found
+contradictions that are **not** resolved here. They are listed, not hidden:
 
-> *"Conforms to the Laws of Robotics for AI, version ⟨X⟩, scope ⟨system, version, decision classes⟩,
-> verified ⟨date⟩ by ⟨independent verifier⟩, evidence deposited at ⟨named depository⟩."*
+| # | Open contradiction | Status |
+|---|---|---|
+| W1 | Law 2 requires refusing an unlawful instruction **and** exercising a human override of that refusal — both in the same law | open |
+| W2 | "Irreversible" is defined as "no return path", yet Law 4 requires a return path for irreversible actions | open |
+| W3 | §0 supremacy and §2 precedence give opposite answers when an erasure duty meets a reporting duty | open |
+| W4 | Law 3's termination test requires reconstruction from artefacts; its erasure protocol destroys them | open |
+| W5 | Law 5 requires a measured false-negative rate; a first-time capability has none by definition | open |
+| W6 | The red-team document cites a ceiling clause the law does not contain | open |
+| W7 | Law 8's evidence artefact was the certification record — a certificate presupposing a certificate | open (certification removed, §5) |
+| W8 | Law 1 requires durable evidence; Law 3 permits its lawful destruction | open |
+| — | **No absolute deadlines anywhere.** Every clock is "declared" by the operator | open |
+| L1 | A hosted model can be swapped silently; no duty to disclose | open |
+| L2 | A poisoned source makes a claim "evidenced"; source authenticity is not required | open |
+| L3 | A pipeline of separately compliant systems has no accountable whole | open |
+| L4 | Identity impersonation (voice, face, signature) is not addressed | open |
 
-**5.2 Conditions.** A conformity claim is void unless: (1) an independent verifier issued it;
-(2) for **each** law 0–8 an evidence artefact with a date and an execution record exists;
-(3) scope names system, version, decision classes and actions; (4) it **lapses on any change** to
-model, prompt, tools or data pipeline; (5) verifier report and artefacts are deposited at a named
-depository; (6) a red verifier result **revokes** it; (7) the wording is exactly 5.1. Any other use
-of the name is misrepresentation.
+**Consequence for use.** The nine laws are a **thinking instrument** for designing AI systems and a
+**checklist for arguments**, not a conformity standard. Anyone who certifies, markets or contracts on
+them is misusing them.
 
-**5.3 Evidenced independence.** A verifier counts as independent only if it (a) is a different
-organisation **or** a different model family than the author, (b) has a **measured false-negative
-rate** on a calibration set, and (c) does not share the author's training data for the held-out set.
-"Different context" alone is not independence.
-
-**5.4 Partial application.** Partial adoption must be declared as such, listing the laws applied and
-the laws not applied. Silence about a law is a claim to apply it.
+**No certification.** There is deliberately **no** conformity claim, badge or certificate attached to
+this proposal. An earlier draft contained one; the reviews showed its conditions could be satisfied
+while misleading (partial application could not be expressed in the permitted wording, and verifier
+independence rested on an "or"). It was removed rather than repaired.
 
 ## 6. Change rule
 

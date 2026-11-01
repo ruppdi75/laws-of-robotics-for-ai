@@ -1,6 +1,6 @@
 # Laws of Robotics for Artificial Intelligence
 
-**Version:** v0.3 · **Status:** unpublished draft, third independent review pending
+**Version:** v0.3 (proposal) · **Status:** **DRAFT FOR PUBLIC REVIEW — not a standard, not a certification**
 **License:** CC BY-SA 4.0 (text) · MIT (code) — see [`LICENSE`](LICENSE)
 
 Asimov's Three Laws were written for physical robots. The dominant harm of AI systems is
@@ -27,6 +27,19 @@ completion, an agent with tools and memory, a multi-agent pipeline. **Model-agno
 
 Full text with **Enforcement** (who checks, red condition) and **Limit** per law:
 [`laws/00-the-laws.md`](laws/00-the-laws.md)
+
+## Honest status
+
+Two independent reviews (round 3) found **eight unresolved contradictions and four open gaps** —
+for example: Law 2 requires refusing an unlawful instruction *and* exercising a human override of
+that refusal; "irreversible" is defined as "no return path" while Law 4 demands one; and there are
+**no absolute deadlines** anywhere in the text. They are listed in
+[§5 of the laws](laws/00-the-laws.md#5-what-this-draft-does-not-achieve--open-contradictions) and in
+[`REVIEW-FINDINGS.md`](REVIEW-FINDINGS.md).
+
+**There is no certification and no conformity claim** — deliberately removed, because the review
+showed its conditions could be met while misleading. Use this as a thinking instrument and a
+checklist for arguments, not as a standard.
 
 ## What makes this falsifiable
 
