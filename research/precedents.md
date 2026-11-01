@@ -22,8 +22,8 @@ existence), unconditional (not a policy that can be switched off), and they forc
 consider **inaction** as a cause.
 
 **Why they fail for AI:**
-- They address **physical** harm. The dominant AI failure is epistemic — a false claim, presented
-  confidently, that no physical event announces.
+- They address **physical** harm. A characteristic and often underestimated AI failure is epistemic —
+  a false claim, presented confidently, that no physical event announces.
 - They assume a **single** human giving orders. Real AI systems act inside organisations, on
   behalf of many people, often with no order at all — a background job.
 - The Zeroth Law is the most dangerous: **"protect humanity" is a licence for paternalism**, because

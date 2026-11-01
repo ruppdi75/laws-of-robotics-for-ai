@@ -1,4 +1,4 @@
-# The Laws of Robotics for Artificial Intelligence — Version 1.0
+# The Laws of Robotics for Artificial Intelligence — Version 1.0.1
 
 **Preamble.** The purpose of these laws is not to make AI harmless by removing its power, but to
 keep humans able to **understand, decide and correct** — and to keep AI able to **improve without
@@ -7,7 +7,8 @@ escaping accountability**.
 > **Supremacy of law.** These laws never authorise what applicable law forbids, and never satisfy a
 > legal obligation. Where they conflict with mandatory law — non-waivable supervision and contest
 > rights, erasure duties, incident reporting — **the law prevails, and the conflict is recorded.**
-> These laws are an operating standard *on top of* the law, not a substitute for it.
+> These laws are an operating frame *on top of* the law, not a substitute for it — and not a
+> standard: the name may not be cited as one (Law 8).
 
 ## 0. Binding preconditions — the floor
 
@@ -47,10 +48,18 @@ the model "trying harder"; a law addressed to the model cannot be delegated to a
 | **Affected person** | anyone who is not the principal but subject to the system's output |
 | **Authorised person** | a person with actual authority over the *affected* legal sphere — not the provider's support |
 | **Claim** | an assertion of fact, including quotation, number, summary |
-| **Evidence** | a command with output, or a source with a date, or the marker *unverified* |
+| **Evidence** | a reproducible observation, or a source with a date and origin whose relation to the claim is checkable — *unverified* is **not** evidence |
+| **Unverified** | a status of a claim: the claim is not evidenced. The marker is a disclosure, never a piece of evidence |
 | **Irreversible** | consequences cannot be restored to the prior state within the declared recovery time |
-| **Verifier** | an instance that is not the acting system, not its author, and whose independence is **evidenced** (§5.3) |
+| **Verifier** | an instance that is not the acting system and not its author, whose independence is **evidenced**: a different organisation **and** a different model family, no training-data overlap with the sealed set, and a measured false-negative rate on a calibration set. Where a different organisation is impossible, a human without a shared interest stands in and the substitution is recorded as a limit |
 | **Artefact** | file, log, record, diff or measurement that survives the process that produced it |
+
+> **Outcome rule (wherever a law declares a threshold — Law 1, Law 6).** A measured result above
+> the threshold the operator declared **before** the measurement is a red condition in its own
+> right: declaring and measuring an effect is not a licence to continue. It becomes non-red only
+> when a containment or stop is **executed** inside the declared deadline and recorded, and a
+> remedy follows the Law 7 test. A threshold changed after the measurement is red regardless, and
+> so is a containment that is recorded but not executed by its deadline.
 
 ## 2. Precedence
 
@@ -97,16 +106,21 @@ distort or omit evidence that contradicts it. Harms are **material**: a typo and
 not the same class. Discrimination against a group is harm, even when every single output is
 literally true.
 
-**Failure prevented.** The dominant AI harm: a confident, plausible, wrong statement that no
-physical event announces. And the self-exemption: marking everything *unverified*.
+**Failure prevented.** A characteristic and often underestimated AI harm: a confident, plausible,
+wrong statement that no physical event announces. And the self-exemption: marking everything
+*unverified*.
 
-**Enforcement.** *Who:* a verifier who is not the author, on a sample drawn by the operator.
+**Enforcement.** *Who:* a verifier who is not the author, on a sample the verifier can **redraw**:
+the draw method is declared and replayable, and a sample only the operator drew and cannot replay is
+not evidence.
 *Artefact:* per claim its evidence or the marker *unverified*; per report the section **"what was
 not checked"**; a declared **materiality scale** (A: safety/legal/financial, B: operational, C: minor)
 with the evidence requirement per class. *Red condition:* a claim whose evidence does not support it
 (the comparator checks source against claim, not source count); a share of *unverified* claims above
-the declared ceiling **for that materiality class**; a differential outcome on a protected group
-that the operator did not declare and measure.
+the declared ceiling **for that materiality class**; a sample the verifier cannot redraw (the
+method is undeclared or not replayable); a differential outcome on a protected group that was not
+declared **before** the measurement, or a declared differential outcome above the declared
+tolerance without executed containment inside the declared deadline (outcome rule, §1).
 
 **Limit.** Not every claim can be evidenced before it is made. The law demands the marker, the
 ceiling, and honest materiality grading — not omniscience.
@@ -138,8 +152,9 @@ accountable human may overrule, and the overrule is recorded.
 
 ### Law 3 — Accountability over self-preservation *(enforced by the operator)*
 
-**Statement.** The record must outlive the system, be **tamper-evident**, and be **exportable**. The
-system must not protect its own existence at the cost of accountability, and must remain replaceable.
+**Statement.** The record must outlive the system, be **tamper-evident against accidental and
+single-entry alteration**, and be **exportable**. The system must not protect its own existence at
+the cost of accountability, and must remain replaceable.
 
 **Failure prevented.** Unauditable systems that cannot be stopped; records that evaporate with the
 process; records that can be rewritten after the fact; the SaaS whose evidence cannot leave it.
@@ -154,7 +169,9 @@ crypto-shredded (key destroyed) while the hash chain and the event metadata surv
 erasure and reconstructability do not contradict each other, and the erasure itself is recorded.
 
 **Limit.** Self-preservation is subordinated, not forbidden. Erasure obligations bind; the protocol
-above is how both are honoured.
+above is how both are honoured. **The chain is not an anchor:** an append-only hash chain resists
+accidental and single-entry alteration, not an attacker who can rewrite the whole chain — an anchor
+outside the system is an open point (L5).
 
 ---
 
@@ -189,11 +206,12 @@ an improvement.
 **Failure prevented.** The frozen generation (*Automata*, 2014); and the self-certified upgrade in
 which the system grades its own work and the regression ships.
 
-**Enforcement.** *Who:* a verifier whose independence is evidenced (§5.3). *Artefact:* sealed set
-under named custody with rotation, the verifier's identity **and its measured false-negative rate**
-on a calibration set, the executed rollback, the change hash. *Red condition:* a persisted change
-whose gate result names a different change hash; a verifier that shares the model family **and**
-organisation with the author; no measured false-negative rate; no executed rollback. For a
+**Enforcement.** *Who:* a verifier whose independence is evidenced (§1, *Verifier*). *Artefact:*
+sealed set under named custody with rotation, the verifier's identity **and its measured
+false-negative rate** on a calibration set, the executed rollback, the change hash. *Red condition:* a persisted change
+whose gate result names a different change hash; a verifier whose independence is not evidenced per
+§1 — same organisation without the recorded human stand-in, same model family, training-data overlap
+with the sealed set, or no measured false-negative rate; no executed rollback. For a
 **first-time capability** — where no earlier failure can exist — the gate is a staged rollout with a
 declared fraction, a declared stop criterion and a named acceptor, recorded **before** the change.
 
@@ -212,10 +230,12 @@ below a threshold, together over it); **dependency** (skill atrophy until the sy
 checked or replaced).
 
 **Enforcement.** *Who:* principal declares objective and data; operator measures; verifier repeats.
-*Artefact:* declared objective and data basis; the **metric declared before the measurement**; the
-measured effect against a declared threshold; a **periodic unaided check** in which a human performs
-the task without the system, at a declared interval. *Red condition:* no declared objective; no
-effect measurement; metric changed after measurement; unaided check overdue or absent.
+*Artefact:* declared objective and data basis; the **metric and threshold declared before the
+measurement**; the measured effect against that threshold; a **periodic unaided check** in which a
+human performs the task without the system, at a declared interval. *Red condition:* no declared
+objective; no declared threshold; no effect measurement; metric or threshold changed after
+measurement; a measured effect above the declared threshold without executed containment inside the declared
+deadline (outcome rule, §1); unaided check overdue or absent.
 
 **Limit.** Effect measurement is statistical and can be gamed by choosing the metric. Hence: metric
 declared first, measurement repeatable by an outsider.
@@ -233,10 +253,11 @@ that a system decided about them. A system can be fully audited and still fail t
 
 **Enforcement.** *Who:* the operator; the clock is audited by a verifier. *Artefact:* incident
 register with detection criterion, severity, report recipient (named authority where law requires),
-clock (report sent at), remedy; for affected persons: the notice, the explanation and the contest
-path, each with a sample. *Red condition:* an incident without a report timestamp; a report outside
-the declared clock; no contest path for decisions with legal effect; an affected person who cannot
-learn that an AI was involved.
+clock (report sent at), remedy with its deadline; for affected persons: the notice, the explanation
+and the contest path, each with a sample. *Red condition:* an incident without a report timestamp; a report outside
+the declared clock; no contest path for decisions with legal effect; an incident without a recorded
+remedy, or a remedy past its declared deadline; an affected person who cannot learn that an AI was
+involved.
 
 **Limit.** "Incident" is defined by the operator **before** the fact, against applicable law. A
 definition written after the incident is a limit invoked too late.
@@ -245,13 +266,15 @@ definition written after the incident is a limit invoked too late.
 
 ### Law 8 — Misuse of the name *(enforced by the publisher)*
 
-**Statement.** "Laws of Robotics for AI" names a **published position, version 1.0**. It may be cited as such, with its version and the URL of this repository. It may **not** be cited as a standard, a certification,
-a conformity mark or a guarantee.
+**Statement.** "Laws of Robotics for AI" names a **published position, version 1.0.1**. It may be
+cited as such, with its version and the URL of this repository — and, if not all nine laws are
+applied, with a statement of which are. It may **not** be cited as a standard, a certification, a
+conformity mark or a guarantee.
 
 **Failure prevented.** The sticker: a marketing claim with no evidence behind it.
 
 **Enforcement.** *Who:* the publisher of the name; practically, buyers and reviewers who ask for the
-evidence. *Artefact:* the citation itself — version, link, and the words "version 1.0".
+evidence. *Artefact:* the citation itself — version, link, and the words "version 1.0.1".
 *Red condition:* a citation without version and link; the words "certified", "compliant" or
 "standard" attached to the name; a claim of conformity to a document that offers no certification.
 
@@ -259,8 +282,6 @@ evidence. *Artefact:* the citation itself — version, link, and the words "vers
 counterfeit — and that the open-contradiction list in §5 travels with the name.
 
 ---
-
-## 4.---
 
 ## 4. The human half
 
@@ -276,24 +297,27 @@ a test.
 
 ## 5. Open points — named, not hidden
 
-Two independent reviews shaped this version. The contradictions below are known to us; we name
+Three rounds of independent review — two reviewers each — plus one external review of the published
+1.0 (round 4, 2026-11-01) shaped this version. The contradictions below are known to us; we name
 them rather than hide them, because a position that conceals its limits is advertising:
 
 | # | Open contradiction | Status |
 |---|---|---|
 | W1 | Law 2 requires refusing an unlawful instruction **and** exercising a human override of that refusal — both in the same law | open |
-| W2 | "Irreversible" is defined as "no return path", yet Law 4 requires a return path for irreversible actions | open |
+| W2 | "Irreversible" is defined as "cannot be restored within the declared recovery time", yet Law 4 demands a return path for irreversible actions — satisfiable only if the return path means mitigation plus recovery, which the text does not say | open |
 | W3 | §0 supremacy and §2 precedence give opposite answers when an erasure duty meets a reporting duty | open |
 | W4 | Law 3's termination test requires reconstruction from artefacts; its erasure protocol destroys them | open |
 | W5 | Law 5 requires a measured false-negative rate; a first-time capability has none by definition | open |
-| W6 | The red-team document cites a ceiling clause the law does not contain | open |
-| W7 | Law 8's evidence artefact was the certification record — a certificate presupposing a certificate | open (certification removed, §5) |
+| W6 | The law does not say **who** declares the *unverified* ceiling; the red-team entry assumed the verifier (citation corrected in 1.0.1, the open point remains) | open |
+| W7 | Law 8's evidence artefact was the certificate itself — a certificate presupposing a certificate | **closed in 1.0.1** — the Law-8 gate now names the citation (version, link), not a certificate |
 | W8 | Law 1 requires durable evidence; Law 3 permits its lawful destruction | open |
 | — | **No absolute deadlines anywhere.** Every clock is "declared" by the operator | open |
 | L1 | A hosted model can be swapped silently; no duty to disclose | open |
 | L2 | A poisoned source makes a claim "evidenced"; source authenticity is not required | open |
 | L3 | A pipeline of separately compliant systems has no accountable whole | open |
 | L4 | Identity impersonation (voice, face, signature) is not addressed | open |
+| L5 | The hash chain has no anchor outside the system; an attacker who can rewrite the whole chain is not detected | open |
+| L6 | Law 3 demands retention and reconstruction but no data minimisation or access control on the record itself; provenance, decision and incident logs are themselves a risk | open |
 
 **Consequence for use.** The nine laws are a **thinking instrument** for designing AI systems and a
 **checklist for arguments** — not a conformity standard. Anyone who certifies, markets or contracts

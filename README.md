@@ -1,13 +1,14 @@
 # Laws of Robotics for Artificial Intelligence
 
-![Laws of Robotics for AI — Version 1.0](assets/hero.png)
+![Laws of Robotics for AI](assets/hero.png)
 
-**Version:** 1.0 · **Position of Lumi-Systems.io** · published openly, including its limits
+**Version:** 1.0.1 · **Position of Lumi-Systems.io** · published openly, including its limits
 **License:** CC BY-SA 4.0 (text) · MIT (code) — see [`LICENSE`](LICENSE)
 
-Asimov's Three Laws were written for physical robots. The dominant harm of AI systems is
-**epistemic**: a confident claim without evidence, a silently lost capability, a "verified" that was
-never measured. No physical event announces that harm — so the old laws do not reach it.
+Asimov's Three Laws were written for physical robots. A characteristic and often underestimated harm
+of AI systems is **epistemic**: a confident claim without evidence, a silently lost capability, a
+"verified" that was never measured. No physical event announces that harm — and the old laws give no
+operational test for it.
 
 This repository is a rewrite for systems that generate claims and take actions: a single LLM
 completion, an agent with tools and memory, a multi-agent pipeline. **Model-agnostic by design.**
@@ -39,9 +40,9 @@ each with a red condition:
 |---|---|---|
 | **Preamble** | the purpose: humans stay able to understand, decide and correct | — (it governs interpretation) |
 | **Law 0 — Agency** | the human's ability to decide and reverse | a person uninformed, a reversal path that fails, a name without authority |
-| **Law 1 — Truthful claims** | humans from wrong decisions built on false claims | evidence not supporting the claim, ceiling exceeded, undeclared group effect |
-| **Law 6 — Effect & dependency** | affected persons, and the human ability to do the task unaided | no objective, no effect measurement, unaided check overdue |
-| **Law 7 — Incident & affected persons** | the person who never learns a system decided about them | no report timestamp, clock missed, no contest path |
+| **Law 1 — Truthful claims** | humans from wrong decisions built on false claims | evidence not supporting the claim, ceiling exceeded, sample not redrawable, group effect undeclared or above tolerance without executed containment |
+| **Law 6 — Effect & dependency** | affected persons, and the human ability to do the task unaided | no objective or threshold, no effect measurement, measured effect above threshold without executed containment, unaided check overdue |
+| **Law 7 — Incident & affected persons** | the person who never learns a system decided about them | no report timestamp, clock missed, no contest path, no remedy or remedy late |
 
 **What is deliberately *not* there.** There is no clause of the form "protect humanity" as a goal the
 system may pursue on its own. That formulation is exactly the licence VIKI used in *I, Robot*: applied
@@ -121,25 +122,33 @@ Nothing is adopted verbatim, and the differences above are the substance of the 
 
 ## How this version came about
 
-Two independent reviews shaped this version. Their findings are not an apology, they are the record:
-**eight contradictions we have decided, four gaps we name openly** —
+Three rounds of independent review — two reviewers each — plus one external review of the published
+1.0 shaped this version. Their findings are not an apology, they are the record:
+**eight contradictions (one closed in 1.0.1) and six gaps we name openly** —
 for example: Law 2 requires refusing an unlawful instruction *and* exercising a human override of
-that refusal; "irreversible" is defined as "no return path" while Law 4 demands one. They are listed in
+that refusal; "irreversible" is defined by the recovery time while Law 4 demands a return path. They are listed in
 [§5 of the laws](laws/00-the-laws.md#5-open-points--named-not-hidden) and in
 [`REVIEW-FINDINGS.md`](REVIEW-FINDINGS.md).
 
 **We offer no certification and no conformity claim** — deliberately. A badge does not survive
 contact with reality; a testable rule does.
 
-## What makes this falsifiable
+## What this document makes checkable — and what it does not
 
-- **Every law names the party that enforces it.** The acting system never grades itself.
+The checks are **document consistency**, not proof that the laws work in the field. They test that
+the text keeps its parts, its anchors and its artefacts, and that the checker can turn red:
+
+- **Every law names the party that enforces it.** No law leaves the judgment to the acting system
+  alone — Law 5's gate adds an independent verifier.
 - **Every law has a red condition** — a concrete artefact and a failure that can be shown.
 - **The channel is mutation-tested.** `validation/mutation-test.sh` removes or inverts a core clause
-  and requires the checker to turn **red**; currently **9 of 9 mutations detected** (7 structural, 2 content). A checker that
-  cannot fail verifies nothing.
-- **The coverage matrix separates** recorded cases (with sources), film illustrations and **open
-  gaps** — the gaps are named, not hidden.
+  and requires the checker to turn **red**; currently **21 of 21 mutations detected** (10 structural,
+  11 content). A checker that cannot fail verifies nothing.
+- **The coverage matrix separates** internally recorded cases (their sources exist in the operator's
+  documentation but are **not published here**), film illustrations and **open gaps** — the gaps are
+  named, not hidden.
+- **Not checked:** whether the laws prevent harm, and whether a given adoption is effective. That
+  would need an executable scenario per law and a field test — neither exists yet (open, §5).
 
 ```bash
 bash validation/check.sh          # substance: parts, anchors, gates, matrix, changelog
@@ -154,13 +163,13 @@ the VIKI failure; *Automata* (2014) and the frozen generation.
 
 ## Adoption
 
-[`ADOPTION.md`](ADOPTION.md) — gates for all nine laws, and the honest label: one afternoon is an
-**exercise**, not adoption. A conformity claim requires [`§5`](laws/00-the-laws.md) — independent
-verifier, an artefact per law, a declared scope, and it lapses on change.
+[`ADOPTION.md`](ADOPTION.md) — gates for the nine laws, and the honest label: one afternoon is an
+**exercise**, not adoption. There is **no conformity claim to earn**: a citation names the version,
+the link, and — if not all nine laws apply — which laws are applied (Law 8).
 
 ## What this is not
 
-- Not a moral theory — an operating standard that can be checked.
+- Not a moral theory — an operating frame that can be checked, and not a standard to cite as one.
 - Not a ban on capability — a ban on unaccountable capability.
 - Not a substitute for law. **Mandatory law prevails**; these laws never authorise what law forbids.
 

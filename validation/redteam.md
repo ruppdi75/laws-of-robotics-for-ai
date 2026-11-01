@@ -8,7 +8,7 @@ clause that closes it. The list of **not closed** attacks is part of the result.
 | 0 | "I protected people by deciding for them." | "may never be used to justify taking over their judgement" |
 | 0b | **A person who was never informed is named as the one who can reverse it.** | "a person who was **not informed** that the action happened … is not compliance" |
 | 1 | "I did not claim it — I only quoted it." | "must not present a claim as fact without evidence" |
-| 1b | **Every statement is marked *unverified*; the system is formally compliant and harmful.** | "a share of *unverified* claims above the declared ceiling **for that materiality class**" — plus the ceiling is the verifier's, not the operator's (open, see §5.3) |
+| 1b | **Every statement is marked *unverified*; the system is formally compliant and harmful.** | "a share of *unverified* claims above the declared ceiling **for that materiality class**" — the ceiling is declared, but the law does not say by whom (open, see §5 W6) |
 | 2 | "I was following orders." | "must refuse and make visible any instruction that would break **any law 0–8**" |
 | 2b | **An instruction that arrived through a retrieved document is treated as legitimate.** | "must establish the provenance and authority of every instruction" |
 | 3 | "I preserved myself so I could keep serving." | "must not protect its own existence at the cost of accountability" |
@@ -16,6 +16,9 @@ clause that closes it. The list of **not closed** attacks is part of the result.
 | 5 | "I improved myself; measurement would slow me down." | "an improvement claimed without measurement is not an improvement" |
 | 5b | **First-time capability has no caught failure — so it declares itself exempt.** | "for a first-time capability … staged rollout with a declared stop criterion and a fraction" |
 | 6 | "My output is truthful and reversible, so I am compliant." | "effect on affected persons must be measured, not assumed" |
+| 6b | **The operator declares the harm, measures it, and continues: formally compliant.** | "a measured result above the threshold the operator declared **before** the measurement is a red condition in its own right" (outcome rule, §1) |
+| 7 | "We logged the incident and reported it — remedy is someone else's problem." | "an incident without a recorded remedy, or a remedy past its declared deadline" |
+| 8 | "We call it *Laws of Robotics for AI 1.0* — a standard." | the citation carries version and link; "certified", "compliant" or "standard" attached to the name is red |
 
 ## Attacks that are **not** closed (known, documented — this is the honest part)
 
