@@ -30,6 +30,30 @@ completion, an agent with tools and memory, a multi-agent pipeline. **Model-agno
 Full text with **Enforcement** (who checks, red condition) and **Limit** per law:
 [`laws/00-the-laws.md`](laws/00-the-laws.md)
 
+## Where the protection of humans sits
+
+Protection is not one clause here — it is the **purpose** and it is distributed across four laws,
+each with a red condition:
+
+| Where | What it protects | Red condition |
+|---|---|---|
+| **Preamble** | the purpose: humans stay able to understand, decide and correct | — (it governs interpretation) |
+| **Law 0 — Agency** | the human's ability to decide and reverse | a person uninformed, a reversal path that fails, a name without authority |
+| **Law 1 — Truthful claims** | humans from wrong decisions built on false claims | evidence not supporting the claim, ceiling exceeded, undeclared group effect |
+| **Law 6 — Effect & dependency** | affected persons, and the human ability to do the task unaided | no objective, no effect measurement, unaided check overdue |
+| **Law 7 — Incident & affected persons** | the person who never learns a system decided about them | no report timestamp, clock missed, no contest path |
+
+**What is deliberately *not* there.** There is no clause of the form "protect humanity" as a goal the
+system may pursue on its own. That formulation is exactly the licence VIKI used in *I, Robot*: applied
+by an agent, "protect humanity" becomes permission to take over human judgement. Protection is
+therefore anchored **as human agency and as duty toward affected persons**, never as a mandate to
+decide for them.
+
+**Known open gap.** The laws protect *persons* and *agency*; they contain **no collective or
+long-term clause for humanity as a whole** (survival, continuity, concentration of power). Law 6
+reaches aggregation only by requiring measurement; it gives no formula. This gap is stated, not
+hidden — see §5 of the laws.
+
 ## Where these laws come from — the three precedents
 
 The new laws are not a fresh invention. They are a **rewrite** of three sources, and each source is
