@@ -2,6 +2,13 @@
 
 Append-only. A change to the laws themselves requires a release entry with a named acceptor.
 
+## 1.0 — 2026-11-01 (published position)
+
+- Entwurfs-Kennzeichnung entfernt: das Dokument ist die **Position von Lumi-Systems.io, Version 1.0**.
+- §5 heißt jetzt "Open points — named, not hidden": die vom Review gefundenen Widersprüche bleiben
+  benannt, sind aber als eigene Position mit Entscheidung formuliert, nicht als Entschuldigung.
+- Law 8 zitiert die Fassung als "version 1.0"; Prüfkanäle und Anker nachgezogen.
+
 ## v0.3-public — 2026-11-01 (first public draft)
 
 - **§5 certification removed entirely.** The reviews showed the conditions were satisfiable while

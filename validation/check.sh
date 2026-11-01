@@ -48,7 +48,7 @@ echo "== 6. Unbelegte Behauptung darf nicht im Repo stehen =="
 if grep -rq --exclude=check.sh --exclude=mutation-test.sh 'The proof is that each law' . 2>/dev/null; then rot "unbelegte 'proof'-Behauptung gefunden"; else ok "keine unbelegte proof-Behauptung"; fi
 
 echo "== 7. Changelog zum Stand =="
-ver=$(grep -m1 '^# The Laws' laws/00-the-laws.md | grep -oE 'v[0-9]+\.[0-9]+')
+ver=$(grep -m1 '^# The Laws' laws/00-the-laws.md | grep -oE '(v|Version )[0-9]+\.[0-9]+' | grep -oE '[0-9]+\.[0-9]+')
 [ -n "$ver" ] && grep -q "## $ver" CHANGELOG.md && ok "Changelog hat $ver" || rot "Changelog ohne $ver"
 
 echo "== 8. Mutationstest existiert und ist ausführbar =="
