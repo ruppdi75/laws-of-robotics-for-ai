@@ -164,3 +164,7 @@ verifier, an artefact per law, a declared scope, and it lapses on change.
 - Not a moral theory — an operating standard that can be checked.
 - Not a ban on capability — a ban on unaccountable capability.
 - Not a substitute for law. **Mandatory law prevails**; these laws never authorise what law forbids.
+
+---
+
+#lumisystemsio
