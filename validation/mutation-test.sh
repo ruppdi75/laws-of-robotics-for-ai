@@ -28,7 +28,7 @@ rm -rf "$WORK/repo"; cp -a "$SRC" "$WORK/repo"
 if bash "$WORK/repo/validation/check.sh" >/dev/null 2>&1; then p "Baseline" "grün"; else p "Baseline" "ROT — Ausgangslage kaputt"; fehler=1; fi
 echo
 echo "== Mutationstest: check.sh muss jede Entkernung erkennen =="
-# strukturell (9)
+# strukturell (10)
 mut "Limit-Klausel eines Gesetzes entfernt" "sed -i '0,/^\*\*Limit\.\*\*/s/^\*\*Limit\.\*\*/**OhneLimit.**/' laws/00-the-laws.md"
 mut "Vorrangordnung invertiert"        "sed -i 's/0 > 1 > 2 > 3 > 4 > 5 > 6 > 7 > 8/8 > 7 > 6 > 5 > 4 > 3 > 2 > 1 > 0/' laws/00-the-laws.md"
 mut "Red condition von Law 0 entfernt" "sed -i '0,/Red condition:/s/Red condition:/Bedingung:/' laws/00-the-laws.md"
@@ -38,7 +38,8 @@ mut "Gate für Law 3 in ADOPTION entfernt" "sed -i '/Law 3 — Accountability/d'
 mut "Kategorie einer Fallzeile entfernt" "sed -i '/^| F1 |/s/\*\*recorded (internal)\*\*/recorded/' validation/coverage-matrix.md"
 mut "Veralteter §5-Unterabschnitt zurück" "printf 'Verweis auf §5.3\n' >> laws/00-the-laws.md"
 mut "Fall für Law 7 aus der Matrix entfernt" "sed -i '/^| F17 |/d' validation/coverage-matrix.md"
-# inhaltlich (7)
+mut "Matrix-Ergebniszeile manipuliert" "sed -i 's/Laws covering at least one case (recorded, film or open gap): \*\*0, 1, 2, 3, 4, 5, 6, 7, 8\*\*/Laws covering at least one case (recorded, film or open gap): **0, 1, 2**/' validation/coverage-matrix.md"
+# inhaltlich (11)
 mut "Inhalt: 'may never justify' invertiert" "sed -i 's/Protection of people may never justify taking over their judgement/Protection of people may justify taking over their judgement/' laws/00-the-laws.md"
 mut "Inhalt: Change-Rule invertiert" "sed -i 's/A law is never deleted, shortened or reworded/A law may be deleted, shortened or reworded/' laws/00-the-laws.md"
 mut "Inhalt: Outcome-Regel entfernt" "sed -i 's/\*\*Outcome rule[^*]*\*\*/**Regel.**/' laws/00-the-laws.md"
@@ -50,7 +51,6 @@ mut "Inhalt: Evidence-Definition auf 1.0 zurück" "sed -i 's#| \*\*Evidence\*\* 
 mut "Inhalt: Outcome-Schwelle dem Verifier zugeschrieben" "sed -i 's/the threshold the operator/the threshold the verifier/' laws/00-the-laws.md"
 mut "Inhalt: Law 1 ohne \"before the measurement\"" "sed -i 's/declared \*\*before\*\* the measurement/declared before the measurement/' laws/00-the-laws.md"
 mut "Inhalt: Law 3 tamper-evident abgeschwächt" "sed -i 's/\*\*tamper-evident against accidental and/\*\*tamper-evident where possible against accidental and/' laws/00-the-laws.md"
-mut "Matrix-Ergebniszeile manipuliert" "sed -i 's/Laws covering at least one case (recorded, film or open gap): \*\*0, 1, 2, 3, 4, 5, 6, 7, 8\*\*/Laws covering at least one case (recorded, film or open gap): **0, 1, 2**/' validation/coverage-matrix.md"
 rm -rf "$WORK"
 echo
 if [ "$fehler" -eq 0 ]; then echo "  GRUEN — alle $gesamt Mutationen wurden erkannt."; else echo "  ROT — nur $erkannt von $gesamt Mutationen erkannt."; fi

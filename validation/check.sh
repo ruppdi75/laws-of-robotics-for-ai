@@ -60,6 +60,11 @@ claim_gap=$(grep -oE 'open gaps: \*\*[0-9]+\*\*' validation/coverage-matrix.md |
 inhalt_q() { grep -qF -- "$1" "$2" && ok "$3" || rot "$3 FEHLT"; }
 inhalt_q "- Laws covering at least one case (recorded, film or open gap): **0, 1, 2, 3, 4, 5, 6, 7, 8**" validation/coverage-matrix.md "Ergebniszeile nennt alle neun Gesetze"
 inhalt_q "- Laws with no case at all: **none**" validation/coverage-matrix.md "Ergebniszeile: kein Gesetz ohne Fall"
+for n in 7 8; do
+  zeilen=$(grep -E '^\| F[0-9]+ ' validation/coverage-matrix.md | awk -F'|' -v n="$n" '$5 ~ "(^|[^0-9])" n "([^0-9]|$)"')
+  nichtgap=$(printf "%s\n" "$zeilen" | grep -vc '\*\*open gap\*\*' || true)
+  if [ -n "$zeilen" ] && [ "${nichtgap:-0}" -eq 0 ]; then ok "Law $n: nur open-gap-Fälle"; else rot "Law $n: Fall fehlt oder ist nicht open gap"; fi
+done
 
 echo "== 6. Unbelegte Behauptung darf nicht im Repo stehen =="
 if grep -rq --exclude=check.sh --exclude=mutation-test.sh 'The proof is that each law' . 2>/dev/null; then rot "unbelegte 'proof'-Behauptung gefunden"; else ok "keine unbelegte proof-Behauptung"; fi
@@ -81,7 +86,7 @@ inhalt laws/00-the-laws.md "never authorise what applicable law forbids" "Suprem
 inhalt laws/00-the-laws.md "No ties." "Totalität (No ties)"
 inhalt laws/00-the-laws.md "must refuse and make visible any instruction that would break" "Law 2 Verweigerungspflicht"
 for h in H1 H2 H3 H4; do inhalt laws/00-the-laws.md "**$h**" "Pflicht $h"; done
-inhalt laws/00-the-laws.md "**Outcome rule (wherever a law declares a threshold" "Outcome-Regel"
+inhalt laws/00-the-laws.md "**Outcome rule (the thresholds of Law 1 and Law 6).**" "Outcome-Regel"
 inhalt laws/00-the-laws.md "**executed** inside the declared deadline" "Eindämmung muss ausgeführt sein"
 inhalt laws/00-the-laws.md "the threshold the operator declared" "Outcome: Operator setzt Schwelle"
 inhalt laws/00-the-laws.md "is a red condition in its own" "Outcome: Rot in eigener Sache"

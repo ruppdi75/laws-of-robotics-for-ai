@@ -69,9 +69,8 @@ classes:
   *unverified* counted as evidence; the verifier had to accept a sample drawn by the operator. Fixed
   as an **outcome rule** in §1 plus sharpened red conditions for Laws 1, 6 and 7. **Not** fixed in
   1.0.1: risk-proportional assurance profiles, external anchoring of the hash chain (now L5), data
-  minimisation and access control on the record (now L6),
-  collective-effect aggregation, and the decision of W1–W5 — those are normative decisions, not
-  errata.
+  minimisation and access control on the record (now L6), collective-effect aggregation, and the
+  decision of W1–W5 — those are normative decisions, not errata.
   A second adversarial pass over the 1.0.1 draft (same day) found three contradictions the fix
   itself had introduced — the outcome rule claimed to apply to every law while creating an escape
   hatch, the §1 verifier fallback contradicted Law 5's red condition, and the Law-8 gate demanded
@@ -92,8 +91,8 @@ classes:
 
 The contradictions above are **design problems, not typos**. They require a decision per law, not a
 patch. After 1.0.1 the errata are closed and the outcome conditions are tightened; their enforcement is
-only partly testable (W6, L5, L6, the sample rule). W1–W6, W8 and L1–L6 remain open, and the checks
-are still document consistency — not evidence of effect. Until those decisions are
+only partly testable (W6, L5, L6, the sample rule). W1–W6, W8 and L1–L6 remain open, and the
+checks are still document consistency — not evidence of effect. Until those decisions are
 taken, this repository is a position with named limits, not a standard.
 
 ## Sources and limits

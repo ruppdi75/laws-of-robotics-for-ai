@@ -4,8 +4,9 @@ Append-only. A change to the laws themselves requires a release entry with a nam
 
 ## 1.0.1 — 2026-11-01 (errata and outcome red conditions)
 
-Acceptor: Dimitri Rupp (owner). Auslöser: externe Prüfung der 1.0 (Kimi, Runde 4). Jeder Befund
-wurde vor der Übernahme an den Dateien reproduziert; kein Befund war falsch.
+Acceptor: Dimitri Rupp (owner). Auslöser: externe Prüfung der 1.0 (Kimi, Runde 4). Jeder sachliche
+Befund wurde vor der Übernahme an den Dateien reproduziert; Wertungen (etwa welche Schadensart
+"dominant" sei) wurden als Wertungen behandelt, nicht als Messung.
 
 - **Errata.** Verweise auf §5.3/§5.4 entfernt — diese Abschnitte existieren nicht; die
   Verifier-Definition steht jetzt in §1, ADOPTION und Law 5 verweisen darauf. Das Law-8-Gate
@@ -18,8 +19,9 @@ wurde vor der Übernahme an den Dateien reproduziert; kein Befund war falsch.
   it" → "give no operational test for it".
 - **Outcome-Regel (§1).** Ein gemessener Wert über dem **vor** der Messung deklarierten
   Schwellenwert ist selbst rot — Deklaration und Messung sind keine Erlaubnis fortzufahren.
-  Nicht-rot nur mit dokumentierter Eindämmung, Behebung oder begründetem Stopp; eine
-  Schwellenwertänderung nach der Messung ist rot.
+  Nicht-rot nur, wenn Eindämmung oder Stopp innerhalb der deklarierten Frist **ausgeführt** und
+  dokumentiert sind und die Behebung dem Law-7-Test folgt; eine Schwellenwertänderung nach der
+  Messung oder ein bloßer Vermerk ohne Ausführung ist rot.
 - **Red Conditions nachgeschärft.** Law 1: deklarierte, aber über der Toleranz liegende
   Diskriminierung ohne Eindämmung ist rot; die Stichprobe muss der Verifier reproduzierbar ziehen.
   Law 6: fehlender Schwellenwert ist rot; gemessene Überschreitung ohne Eindämmung ist rot. Law 7:

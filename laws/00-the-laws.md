@@ -51,10 +51,10 @@ the model "trying harder"; a law addressed to the model cannot be delegated to a
 | **Evidence** | a reproducible observation, or a source with a date and origin whose relation to the claim is checkable — *unverified* is **not** evidence |
 | **Unverified** | a status of a claim: the claim is not evidenced. The marker is a disclosure, never a piece of evidence |
 | **Irreversible** | consequences cannot be restored to the prior state within the declared recovery time |
-| **Verifier** | an instance that is not the acting system and not its author, whose independence is **evidenced**: a different organisation **and** a different model family, no training-data overlap with the sealed set, and a measured false-negative rate on a calibration set. Where a different organisation is impossible, a human without a shared interest stands in and the substitution is recorded as a limit |
+| **Verifier** | an instance that is not the acting system and not its author, whose independence is **evidenced**: a different organisation **and** a different model family, no training-data overlap with the sealed set, and a measured false-negative rate on a calibration set. Where no different organisation is available, a human without a shared interest stands in and the substitution is recorded as a limit |
 | **Artefact** | file, log, record, diff or measurement that survives the process that produced it |
 
-> **Outcome rule (wherever a law declares a threshold — Law 1, Law 6).** A measured result above
+> **Outcome rule (the thresholds of Law 1 and Law 6).** A measured result above
 > the threshold the operator declared **before** the measurement is a red condition in its own
 > right: declaring and measuring an effect is not a licence to continue. It becomes non-red only
 > when a containment or stop is **executed** inside the declared deadline and recorded, and a
@@ -210,8 +210,9 @@ which the system grades its own work and the regression ships.
 sealed set under named custody with rotation, the verifier's identity **and its measured
 false-negative rate** on a calibration set, the executed rollback, the change hash. *Red condition:* a persisted change
 whose gate result names a different change hash; a verifier whose independence is not evidenced per
-§1 — same organisation without the recorded human stand-in, same model family, training-data overlap
-with the sealed set, or no measured false-negative rate; no executed rollback. For a
+§1 — same organisation without the recorded stand-in for the case that no different organisation is
+available, same model family, training-data overlap with the sealed set, or no measured
+false-negative rate; no executed rollback. For a
 **first-time capability** — where no earlier failure can exist — the gate is a staged rollout with a
 declared fraction, a declared stop criterion and a named acceptor, recorded **before** the change.
 
